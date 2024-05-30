@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const usersRouter = require('./routes/users');
+const contactsRouter = require('./routes/contactos');
 const app = express();
 
 app.use(express.json());
@@ -13,5 +14,6 @@ app.get('/', async (request, response) => {
 });
 
 app.use('/api/users', usersRouter);
+app.use('/api/contacts', contactsRouter);
 
 module.exports = app;
